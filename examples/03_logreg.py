@@ -64,6 +64,7 @@ loss = tf.reduce_mean(entropy, name='loss') # computes the mean over all the exa
 # using gradient descent with learning rate of 0.01 to minimize loss
 optimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss)
 
+
 # Step 7: calculate accuracy with test set
 preds = tf.nn.softmax(logits)
 correct_preds = tf.equal(tf.argmax(preds, 1), tf.argmax(label, 1))

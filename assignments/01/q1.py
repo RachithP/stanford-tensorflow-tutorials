@@ -23,7 +23,8 @@ x = tf.random_uniform([])  # Empty array as shape creates a scalar.
 y = tf.random_uniform([])
 out = tf.cond(tf.greater(x, y), lambda: x + y, lambda: x - y)
 print(sess.run(out))
-
+print(x.eval())
+print(y.eval())
 ###############################################################################
 # 1b: Create two 0-d tensors x and y randomly selected from the range [-1, 1).
 # Return x + y if x < y, x - y if x > y, 0 otherwise.
@@ -91,3 +92,4 @@ print(sess.run(out))
 ###############################################################################
 
 # YOUR CODE
+sess.close()
